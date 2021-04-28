@@ -8,3 +8,4 @@ for i in range(1,len(urls)):
     name = urls[i].split('/')[-1]
     f = open(name,'wb')
     f.write(img.content)
+    f.close()
