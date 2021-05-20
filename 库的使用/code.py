@@ -9,15 +9,15 @@ response.encoding = response.apparent_encoding
 html = response.text
 
 
-# 正则
+# 正则表达式
 # for i in re.findall('<img src="(.*?)"', html):
 #     print(i)
 
 
 # XPath
-# html = etree.parse(html, etree.HTMLParser())
-# result = html.xpath('//img[@src]')
-# print(result)
+# selector = etree.HTML(html)
+# for i in selector.xpath('//img/@src'):
+#     print(i)
 
 
 # BeautifulSoup
