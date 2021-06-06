@@ -118,7 +118,8 @@ driver.find_element_by_css_selector('.class')
 ## 关闭浏览器
 
 ```python
-driver.close()
+driver.close()  # 关闭当前窗口
+driver.quit()  # 退出相关的驱动程序和关闭所有窗口
 ```
 
 
