@@ -1,6 +1,9 @@
 import time
 from selenium import webdriver
 
+# options = webdriver.ChromeOptions()
+# options.add_argument('--headless')
+# browse = webdriver.Chrome(options=options)
 browse = webdriver.Chrome()
 browse.get('https://www.baidu.com')
 input = browse.find_element_by_class_name('s_ipt')
