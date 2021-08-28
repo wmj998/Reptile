@@ -21,7 +21,6 @@ class PhSpider:
             if not self.q.empty():
                 url = self.q.get()
                 self.lock.release()
-                print(current_thread().getName())
                 res = requests.get(url=url)
                 html = res.text
                 self.get_url(html)
@@ -43,24 +42,14 @@ class PhSpider:
     def save_picture(self, name, img):
         with open('tmp/' + name, 'wb') as f:
             f.write(img)
-            print(name)
 
     def run(self):
         self.url_in()
-        thread_list = []
         for i in range(20):
             thread = Thread(target=self.get_html)
-            thread_list.append(thread)
             thread.start()
-
-        for i in thread_list:
-            i.join()
 
 
 if __name__ == '__main__':
-    start_time = time.time()
     spider = PhSpider()
     spider.run()
-    stop_time = time.time()
-    times = stop_time - start_time
-    print(times)
