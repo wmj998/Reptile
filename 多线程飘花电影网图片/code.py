@@ -9,6 +9,7 @@ class PhSpider:
     def __init__(self):
         self.q = Queue()
         self.lock = Lock()
+        self.thread_list = []
 
     def url_in(self):
         for i in range(1, 105):
@@ -48,8 +49,16 @@ class PhSpider:
         for i in range(20):
             thread = Thread(target=self.get_html)
             thread.start()
+            self.thread_list.append(thread)
+
+        for i in self.thread_list:
+            i.join()
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     spider = PhSpider()
     spider.run()
+    stop_time = time.time()
+    times = stop_time - start_time
+    print(times)
