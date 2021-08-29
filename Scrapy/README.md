@@ -41,32 +41,32 @@
      scrapy crawl quotes
      ```
 
-   
+
 
 
    ## Daomu
 
    多级页面
 
-   
+
 
    ## Kfc
 
    POST
 
-   
+
 
    ## Picture
 
    图片
 
-   
+
 
    ## Ppt
 
    文件
 
-   
+
 
 ## Tenxun
 
